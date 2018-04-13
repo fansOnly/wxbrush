@@ -1,0 +1,20 @@
+
+<view class="page__bd">
+    <view class="formt">素材中心</view>
+    <view class="weui-piList clearfix">
+        <navigator wx:for="{{material}}" wx:key="" url="detail?id={{item.id}}" class="weui-piList_item">
+            <view class="weui-piList_itemx">
+                <view class="weui-piList_hd">
+                    <image class="weui-piList_pic scaleToFill" src="{{item.pic}}" mode="scaleToFill"></image>
+                </view>
+                <!-- <view class="weui-piList_bd"> -->
+                    <text class="weui-piList_txt text-ellipsis">{{item.title}}</text>
+                    <!-- <text data-id="{{item.id}}" data-url="{{item.pic}}" class="iconfont icon-download text-right" bindtap="download"></text> -->
+                <!-- </view> -->
+            </view>
+        </navigator>
+    </view>
+    <!-- <button type="default" class="ajax-more" bindtap="getMore">加载更多</button> -->
+    <view wx:if="{{nodata}}" class="nodata">没有数据了</view>
+    <view wx:else class="nodata">向上滑动，加载更多</view>
+</view>

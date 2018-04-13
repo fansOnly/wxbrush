@@ -1,0 +1,7 @@
+.formt { padding: 30rpx; color: #1e82d2; font-size: 20px; text-align: center; }
+
+
+
+.icon-download { color: #1e82d2; }
+
+.weui-piList_txt { /*max-width: 80%;*/ display: block; text-align: center; line-height: 2; }

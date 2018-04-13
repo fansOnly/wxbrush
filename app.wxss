@@ -1,0 +1,74 @@
+/* reset */
+page { position: relative; background-color: #fff; height: 100%; font-size: 35rpx; line-height: 1.5;}
+checkbox, radio{ margin-right: 10rpx;}
+button{ max-width: 90%; margin-top: 30rpx; margin-bottom: 30rpx; background: #1e82d2; color: #fff;}
+form{ display: block; width: 100%;}
+image{ max-width: 100%; width: 100%; vertical-align:middle;}
+
+
+.clear { display:block;height:0;clear:both;font-size:0;line-height:0;overflow:hidden; }
+.clearfix:after { content:'\20'; display: block; height: 0; line-height: 0; clear: both; }
+
+@import "weui.wxss";
+@import "iconfont.wxss";
+@import "./libs/wux.wxss";
+
+
+/*color*/
+.blue { color: #1e82d2!important; }
+.orange { color: #f60!important; }
+.red { color: #f00!important; }
+.yeallow { color: #ff0!important; }
+.gray { color: #ccc!important; }
+
+/*font*/
+.font12 { font-size: 12px; }
+.font14 { font-size: 14px; }
+.font16 { font-size: 16px; }
+.font18 { font-size: 18px; }
+.font20 { font-size: 20px; }
+
+/*align*/
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-ellipsis { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+
+
+/*iconfont*/
+.iconfont:before { font-size: 20px; }
+.weui-input-icon { padding-left: 80rpx; color: #bfbfbf; }
+.weui-input-icon:before { position: absolute; left: 0; top: 0; }
+
+
+/*image*/
+.widthFix { width: 100%; max-width: 100%; }
+.scaleToFill { width: 100%; height: 150px; }
+.aspectFit { width: 100%; height: 150px; }
+.thumbnail-100 { width: 100px; height: 100px; }
+
+
+/*table*/
+.weui-table { margin: 15rpx; }
+.weui-table_th { position: relative; display: -webkit-flex; display: flex; justify-content: space-around; padding: 10rpx; line-height: 1.8; text-align: center; background: #1e82d2; font-size: 15px; color: #fff; }
+.weui-table_tr { position: relative; display: -webkit-flex; display: flex; justify-content: space-around; line-height: 2; padding: 10rpx; text-align: center; font-size: 12px; border-bottom: 1px solid #e7e7e7; border-left: 1px solid #e7e7e7; border-right: 1px solid #e7e7e7; }
+.weui-table_trbg { background: #f7f7f7; }
+.weui-table_left { text-align: left; }
+.weui-table_btn { display: inline-block; color: #1e82d2; }
+
+
+/*piList*/
+.weui-piList { padding: 10rpx; }
+.weui-piList_item { float: left; width: 50%; }
+.weui-piList_itemx { margin: 10rpx; border: 1px solid #ddd; }
+.weui-piList_hd { padding: 10rpx; }
+.weui-piList_bd { display: -webkit-flex; display: flex; justify-content: space-between; align-items: center; padding: 10rpx; border-top: 1px solid #ddd; line-height: 1.3; }
+
+
+/*button*/
+.ajax-more { padding: 30rpx; color: #1e82d2; font-size: 20px; text-align: center; line-height: 1; }
+.view-more { display: block; width: 60%; margin: 30rpx auto 50rpx; background: #f7f7f7; border: 1px solid #e5e5e5; border-radius: 3px; color: #1e82d2; font-size: 15px; text-align: center; line-height: 2.3; }
+.nodata { padding: 15rpx 0 30rpx; color: #c5c5c5; text-align: center; }
+
+.weui-tip { margin-top: 30rpx; text-align: center; }
+.weui-tip_a { display: inline-block; color: #1e82d2; }

@@ -1,0 +1,48 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+
+<view class="page__bd">
+    <form bindsubmit="formSubmit">
+        <view class="formt">个人信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓 名：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="uname" id="uname" class="weui-input" placeholder="请输入姓名" placeholder-class="gray" value="{{uname}}" bindinput="inputTyping" />
+                    <view wx:if="{{uname.length > 0}}" class="weui-icon-clear" data-for="uname" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手 机：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="mobile" id="mobile" class="weui-input" type="digit" maxlength="11" placeholder="请输入手机号" placeholder-class="gray" value="{{mobile}}" bindinput="inputTyping" />
+                    <view wx:if="{{mobile.length > 0}}" class="weui-icon-clear" data-for="mobile" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-avatar_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">头 像：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-cell__hd weui-cell-avatar">
+                        <view class="weui-avatar" bindtap="chooseImage">
+                            <image wx:if="{{avatar}}" src="{{ avatar }}" class="thumbnail-100"></image>
+                            <image wx:else src="../img/avatar.png" class="thumbnail-100"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-cell__ft upload-btn" bindtap="chooseImage">点击上传</view>
+            </view>
+        </view>
+        <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">提 交</button>
+    </form>
+</view>

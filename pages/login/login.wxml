@@ -1,0 +1,34 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+
+
+<view class="page__bd">
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="#ffffff" indicator-active-color="#1e82d2" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{banner}}" wx:key="">
+            <swiper-item>
+                <image class="widthFix" src="{{item.image}}" mode="widthFix" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <form bindsubmit="formSubmit">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <input name="mobile" id="mobile" class="weui-input weui-input-icon iconfont icon-user {{ isTelFocus ? 'blue' : '' }}" type="digit" maxlength="11" placeholder="请输入手机号" placeholder-class="gray" value="{{mobile}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
+                    <view wx:if="{{mobile.length > 0}}" class="weui-icon-clear" data-for="mobile" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <input name="upass" id="upass" class="weui-input weui-input-icon iconfont icon-pass {{ isPwdFocus ? 'blue' : '' }} last-child" type="text" maxlength="16" password="{{ isPassword ? true : false }}" placeholder="密码" placeholder-class="gray" value="{{upass}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
+                    <view class="iconfont icon-eye {{ !isPassword ? 'blue' : '' }}" data-for="isPassword" bindtap="showPass"></view>
+                </view>
+            </view>
+        </view>
+        <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">登 录</button>
+    </form>
+    <view class="weui-tip"><navigator url="register" class="weui-tip_a" style="margin-right: 15px;" open-type="reLaunch">没有账号，点此注册</navigator><navigator url="../index" class="weui-tip_a" open-type="switchTab">返回首页</navigator></view>
+</view>

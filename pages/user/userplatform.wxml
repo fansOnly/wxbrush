@@ -1,0 +1,47 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+
+<view class="page__bd">
+    <form>
+        <view class="formt">平台信息</view>
+        <view wx:for="{{platinfos}}" wx:key="" class="weui-cells weui-cells_after-title">
+            <view class="plat_title">
+                <text class="plat_txt">{{index+1}}、我的平台</text>
+                <view class="plat_btn">
+                    <text data-pid="{{index}}" class="iconfont icon-save" bindtap="save"></text>
+                    <text wx:if="{{platinfos.length>1}}" data-pid="{{index+1}}" class="iconfont icon-del2" bindtap="delete"></text>
+                    <block wx:if="{{platinfos.length<10}}">
+                        <text wx:if="{{index == platinfos.length-1}}" class="iconfont icon-add2" bindtap="add"></text>
+                    </block>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">选择店铺：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <radio-group data-pid="{{index}}" class="radio-group" bindchange="radioChange">
+                      <label class="radio" wx:for="{{platforms}}" wx:for-item="item2" wx:key="">
+                        <radio value="{{item2.id}}" checked="{{item.platform_id == item2.id ? 'checked' : ''}}"/>{{item2.name}}
+                      </label>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">平台ID：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input data-pid="{{index}}" name="platformaccount" id="platformaccount" class="weui-input" placeholder="请输入您的平台ID" placeholder-class="gray" value="{{item.platform_account}}" bindinput="inputTyping" />
+                    <view data-pid="{{index}}" wx:if="{{item.platform_account.length > 0}}" class="weui-icon-clear" data-for="platformaccount" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- <button class="btnx" form-type="submit" hover-class="button-hover-blue">保存</button> -->
+    </form>
+    <!-- <view class="btnx">添加</view> -->
+    <view class="tipx">友情提示：您最多可以添加10条平台信息！</view>
+</view>

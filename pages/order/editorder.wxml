@@ -1,0 +1,104 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+<import src="../../libs/gallery/gallery"/>
+<template is="gallery" data="{{ ...$wux.gallery }}"/>
+
+<import src="../../libs/actionsheet/actionsheet"/>
+<template is="actionsheet" data="{{ ...$wux.actionSheet }}"/>
+
+
+<view class="page__bd">
+    <form bindsubmit="formSubmit">
+        <view class="formt">编辑订单</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单平台：</view>
+                </view>
+                <view class="weui-cell__bd" bindtap="choosePlatform">
+                    <input name="order_plate" id="order_plate" class="weui-input" placeholder="请输入订单平台" placeholder-class="gray" value="{{order_plate}}" bindinput="inputTyping" disabled />
+                    <!-- <view wx:if="{{order_plate.length > 0}}" class="weui-icon-clear" data-for="order_plate" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view> -->
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">平台的ID：</view>
+                </view>
+                <view class="weui-cell__bd" bindtap="choosePlatform">
+                    <input name="order_account" id="order_account" class="weui-input" placeholder="请输入订单帐号" placeholder-class="gray" value="{{order_account}}" bindinput="inputTyping" disabled />
+                    <!-- <view wx:if="{{order_account.length > 0}}" class="weui-icon-clear" data-for="order_account" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view> -->
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单店铺：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="order_shop" id="order_shop" class="weui-input" placeholder="请输入订单店铺" placeholder-class="gray" value="{{order_shop}}" bindinput="inputTyping" />
+                    <view wx:if="{{order_shop.length > 0}}" class="weui-icon-clear" data-for="order_shop" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单编号：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="order_no" id="order_no" class="weui-input" placeholder="请输入订单编号" placeholder-class="gray" value="{{order_no}}" bindinput="inputTyping" />
+                    <view wx:if="{{order_no.length > 0}}" class="weui-icon-clear" data-for="order_no" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单金额：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="order_price" id="order_price" class="weui-input" type="digit"  placeholder="请输入订单金额" placeholder-class="gray" value="{{order_price}}" bindinput="inputTyping" />
+                    <view wx:if="{{order_price.length > 0}}" class="weui-icon-clear" data-for="order_price" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单日期：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker class="datepicker" mode="date" value="{{order_date}}" start="{{start_date}}" end="{{end_date}}" bindchange="bindDateChange">
+                        <text class="picker-text {{ order_date ? 'picker-color1' : '' }}">{{order_date ? order_date : '请选择日期'}}</text>
+                    </picker>
+                    <picker class="datepicker" mode="time" value="{{order_time}}" bindchange="bindTimeChange">
+                        <text class="picker-text {{ order_time ? 'picker-color1' : '' }}">{{order_time ? order_time : '请选择时间'}}</text>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">上传截图：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view wx:if="{{more.length}}" class="weui-cell__hd weui-cell-avatar clearfix">
+                        <view wx:for="{{more}}" wx:key="" class="weui-avatar order-pic">
+                            <image class="widthFix" src="{{ item.pic }}" mode="widthFix" bindtap="showGallery" data-current="{{ index }}"></image>
+                        </view>
+                    </view>
+                    <view wx:else class="weui-cell__hd weui-cell-avatar">
+                        <view class="weui-avatar">
+                            <image class="widthFix thumbnail-100" src="../img/thumbnail.png" mode="widthFix" bindtap="chooseImage"></image>
+                        </view>
+                    </view>
+                    <view class="weui-cell__ft upload-btn" bindtap="chooseImage">点击上传</view>
+                </view>
+            </view>
+        </view>
+        <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">提 交</button>
+    </form>
+</view>

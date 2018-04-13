@@ -1,0 +1,84 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+<view class="page__bd">
+    <view class="userinfo">
+        <view class="user-avatar">
+            <image wx:if="{{user.avatar}}" class="uavatar" src="{{user.avatar}}" mode=""></image>
+            <image wx:else class="widthFix uavatar" src="../img/avatar.png" mode="widthFix"></image>
+        </view>
+        <view class="user-desc">
+            <view class="user-txt">{{user.user_login}}</view>
+            <view class="user-txt">电话：{{user.mobile}}</view>
+            <view class="user-txt">积分：{{user.commision}}</view>
+            <view class="user-txt">本月订单：{{count}} 次</view>
+        </view>
+    </view>
+    <view class="weui-panel__ft order-more">
+        <view class="weui-cell weui-cell_access" bindtap="addorder">
+            <view class="weui-cell__bd" style="color:#666;">我的订单</view>
+            <view class="weui-cell__ft blue">新增订单<text class="iconfont icon-add"></text></view>
+        </view>
+        <!-- <navigator url="../order/addorder" class="weui-cell weui-cell_access">
+            <view class="weui-cell__bd" style="color:#666;">我的订单</view>
+            <view class="weui-cell__ft blue">新增订单<text class="iconfont icon-add"></text></view>
+        </navigator> -->
+    </view>
+
+    <view class="menu-list">
+        <view class="weui-panel__ft">
+            <navigator url="userinfo" class="weui-cell weui-cell_access weui-cell_link first-child">
+                <view class="weui-cell__bd" style="color:#666;">基本信息</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
+            <navigator url="bank" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd" style="color:#666;">银行信息</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
+            <navigator url="userplatform" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd" style="color:#666;">平台信息</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
+            <navigator url="tixian" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd" style="color:#666;">申请提现</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+    </view>
+
+    <view class="menu-list">
+        <view class="weui-panel__ft">
+            <navigator url="../order/index" class="weui-cell weui-cell_access weui-cell_link first-child">
+                <view class="weui-cell__bd" style="color:#666;">我的订单</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
+            <navigator url="../member/index" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd" style="color:#666;">我的会员</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
+            <navigator url="../moneylog/index" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd" style="color:#666;">我的积分</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
+            <navigator url="../tixian/index" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd" style="color:#666;">我的提现</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+    </view>
+
+
+    <view class="weui-button" bindtap="logout">退出登陆</view>
+</view>

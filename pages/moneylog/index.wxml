@@ -1,0 +1,12 @@
+<view class="page__bd">
+    <view class="formt">我的积分</view>
+    <view class="weui-table">
+        <view wx:for="{{moneyLog}}" wx:key="" class="weui-table_tr {{ index%2==1 ? 'weui-table_trbg' : '' }}" >
+            <view class="weui-table_td table10">{{index+1}}</view>
+            <view class="weui-table_td">{{item.dis}}</view>
+        </view>
+    </view>
+    <!-- <button type="default" class="ajax-more" bindtap="getMore">加载更多</button> -->
+    <view wx:if="{{nodata}}" class="nodata">没有数据了</view>
+    <view wx:else class="nodata">向上滑动，加载更多</view>
+</view>

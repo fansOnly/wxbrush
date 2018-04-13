@@ -1,0 +1,20 @@
+<view class="page__bd">
+    <view class="formt">我的下属会员</view>
+    <view class="weui-table">
+        <view class="weui-table_th">
+            <view class="weui-table_td weui-table_left">会员名称</view>
+            <view class="weui-table_td">会员电话</view>
+            <view class="weui-table_td">本月订单</view>
+            <view class="weui-table_td">累计订单</view>
+        </view>
+        <view wx:for="{{memberList}}" wx:key="" class="weui-table_tr {{ index%2==1 ? 'weui-table_trbg' : '' }}">
+            <view class="weui-table_td weui-table_left">{{item.uname}}</view>
+            <view class="weui-table_td">{{item.uphone}}</view>
+            <view class="weui-table_td">{{item.count}}</view>
+            <view class="weui-table_td">{{item.countx}}</view>
+        </view>
+    </view>
+    <!-- <button type="default" class="ajax-more" bindtap="getMore">加载更多</button> -->
+    <view wx:if="{{nodata}}" class="nodata">没有数据了</view>
+    <view wx:else class="nodata">向上滑动，加载更多</view>
+</view>

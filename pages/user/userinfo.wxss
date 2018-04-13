@@ -1,0 +1,10 @@
+.weui-btn { margin-top: 30px; }
+
+.formt { padding: 30rpx; color: #1e82d2; font-size: 20px; text-align: center; }
+
+.weui-label { width: auto; margin-right: 10rpx; font-size: 14px; }
+.weui-input { font-size: 14px; padding-right: 30px; }
+
+.weui-cell_input { padding: 5px 15px; }
+
+.upload-btn { padding: 0 30rpx; background: #1e82d2; border-radius: 3px; color: #fff; line-height: 2; font-size: 14px; }

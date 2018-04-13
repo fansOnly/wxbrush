@@ -1,0 +1,17 @@
+.page__bd { padding-bottom: 50px; }
+.formt { padding: 15px; color: #1e82d2; font-size: 20px; text-align: center; }
+
+
+.mat-c { margin: 0 10px; text-align: justify; font-size: 14px; line-height: 1.5; }
+
+.copy { width: 100px; height: 30px; margin: 15px auto 0; background: #1e82d2; border-radius: 3px; color: #fff; line-height: 30px; text-align: center; }
+
+
+.img-x { padding: 5px 10px; text-align: center; }
+.downtext { font-size: 14px; }
+.down { padding-top: 10px; }
+
+
+
+.icon-download { margin-left: 5px; color: #1e82d2; font-size: 12px; }
+.icon-download:before { position: relative; top: 1px; margin-right: 5px; }

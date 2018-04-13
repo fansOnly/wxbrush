@@ -1,0 +1,4 @@
+.formt { padding: 30rpx; color: #1e82d2; font-size: 20px; text-align: center; }
+
+.weui-table_td { width: 25%; }
+.weui-cell__ft_in-access { padding-right: 0; }

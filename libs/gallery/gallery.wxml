@@ -1,0 +1,38 @@
+<template name="gallery">
+    <view class="weui-gallery {{ animateCss }}" wx:if="{{ visible }}">
+        <swiper class="weui-gallery__swiper" current="{{ current }}" bindchange="{{ onChange }}" hidden="{{ !urls.length }}">
+            <block wx:for="{{ urls }}" wx:key="{{ item }}">
+                <swiper-item>
+                    <view class="weui-gallery__img" bindtap="{{ onHide }}" style="background-image: url({{ item }})"></view>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="weui-gallery__opr" bindtap="{{ onDelete }}">
+            <view class="weui-gallery__del">
+                <view class="weui-icon-delete weui-icon_gallery-delete"></view>
+            </view>
+        </view>
+    </view>
+</template>
+
+
+<template name="gallery2">
+    <view class="weui-gallery {{ animateCss }}" wx:if="{{ visible }}">
+        <swiper class="weui-gallery__swiper" current="{{ current }}" bindchange="{{ onChange }}" hidden="{{ !urls.length }}">
+            <block wx:for="{{ urls }}" wx:key="{{ item }}">
+                <swiper-item>
+                    <view class="weui-gallery__img" bindtap="{{ onHide }}" style="background-image: url({{ item }})"></view>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="weui-gallery__opr" bindtap="{{ onDelete }}">
+            <view class="weui-gallery__del">
+                <block wx:for="{{ titles }}" wx:key="{{ item }}">
+                    <text wx:if="{{ current == index }}">{{item}}</text>
+                </block>
+                <text class="iconfont icon-download" style="margin-left:10px;color: #fff;vertical-align: middle;"></text>
+                <!-- <view class="weui-icon-delete weui-icon_gallery-delete"></view> -->
+            </view>
+        </view>
+    </view>
+</template>

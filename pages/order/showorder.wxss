@@ -1,0 +1,26 @@
+.weui-btn { margin-top: 30px; }
+
+.formt { padding: 30rpx; color: #1e82d2; font-size: 20px; text-align: center; }
+
+.weui-label { width: auto; margin-right: 10rpx; font-size: 14px; }
+.weui-input { font-size: 14px; padding-right: 30px; }
+
+.weui-cell_input { padding: 5px 15px; }
+
+picker { height:2.08823529em; min-height:2.08823529em; line-height:2.08823529em; }
+.picker-text { font-size: 14px; color: #ccc; }
+.picker-color1 { color: #000; }
+
+
+.order-pic { float: left; width: 32%; margin: 0 1% 1% 0; }
+
+
+.upload-btn { display: inline-block; width: 100px; margin: 20rpx 0; background: #1e82d2; border-radius: 3px; color: #fff; line-height: 2; text-align: center; font-size: 14px; }
+
+
+.weui-icon-delete.weui-icon_gallery-delete { display: none!important; }
+
+.weui-btn_wait { color: #000!important; }
+.weui-btn_refuse { color: #f00!important; }
+.weui-btn_agree { color: #1e82d2!important; }
+.weui-btn_over { color: #1aad19!important; }

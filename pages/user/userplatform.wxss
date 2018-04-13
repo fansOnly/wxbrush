@@ -1,0 +1,28 @@
+.weui-btn { margin-top: 30px; }
+
+.formt { padding: 30rpx; color: #1e82d2; font-size: 20px; text-align: center; }
+
+.weui-label { width: auto; margin-right: 10rpx; font-size: 14px; }
+.weui-input { font-size: 14px; padding-right: 30px; }
+
+.weui-cell_input { padding: 10rpx 15px; }
+
+
+
+
+
+
+
+.plat_title { display: -webkit-flex; display: flex; justify-content: space-between; align-items: center; height: 35px; padding: 0 5px 0 15px; background: #1470b9; color: #fff; font-size: 15px; line-height: 35px; }
+.icon-save:before { font-size: 25px; vertical-align: top; }
+.icon-add2:before { margin-left: 5px; font-size: 25px; vertical-align: top; }
+.icon-del2:before { margin-left: 5px; font-size: 25px; vertical-align: top; }
+
+
+.radio-group { min-height:2.58823529em;line-height:2.58823529em; font-size: 14px; }
+.radio { display: inline-block; margin-right: 5px; white-space: nowrap; }
+radio { margin-right: 0; transform:scale(.8); }
+
+
+.btnx { display: block; width: 80%; height: 40px; margin: 20px auto 0; background: #1470b9; border-radius: 3px; color: #fff; font-size: 14px; text-align: center; line-height: 40px; }
+.tipx { padding: 10px 0; color: #bbb; font-size: 12px; text-align: center; }

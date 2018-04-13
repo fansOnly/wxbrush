@@ -1,0 +1,50 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+
+<view class="page__bd">
+    <form bindsubmit="formSubmit">
+        <view class="formt">申请提现（当前可用积分：{{total}}）</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">开户银行：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="bankname" id="bankname" class="weui-input" placeholder="请输入开户银行" placeholder-class="gray" value="{{bankname}}" bindinput="inputTyping" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">开户姓名：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="bankuname" id="bankuname" class="weui-input" placeholder="请输入开户姓名" placeholder-class="gray" value="{{bankuname}}" bindinput="inputTyping" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">银行卡号：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="bankcard" id="bankcard" class="weui-input" type="digit" maxlength="19" placeholder="请输入银行卡号" placeholder-class="gray" value="{{bankcard}}" bindinput="inputTyping" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">提现金额：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="money" id="money" class="weui-input" type="digit" placeholder="请输入提现金额" placeholder-class="gray" value="{{money}}" bindinput="inputTyping" />
+                    <view wx:if="{{money.length > 0}}" class="weui-icon-clear" data-for="money" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">提 交</button>
+    </form>
+    <view class="desc">
+        <rich-text nodes="{{desc}}"></rich-text>
+    </view>
+</view>

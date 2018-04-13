@@ -1,0 +1,23 @@
+<view class="page__bd">
+    <view class="formt">我的订单</view>
+    <view class="weui-table">
+        <view class="weui-table_th">
+            <view class="weui-table_td weui-table_left">订单编号</view>
+            <view class="weui-table_td">订单平台</view>
+            <view class="weui-table_td">订单时间</view>
+            <view class="weui-table_td">订单状态</view>
+        </view>
+        <navigator wx:for="{{orderList}}" wx:key="" class="weui-table_tr {{ index%2==1 ? 'weui-table_trbg' : '' }}" url="{{ item.state==1 ? 'editorder' : 'showorder' }}?order_id={{item.id}}">
+            <view class="weui-table_td weui-table_left">{{item.order_no}}</view>
+            <view class="weui-table_td">{{item.order_plate}}</view>
+            <view class="weui-table_td">{{item.order_date}}</view>
+            <view wx:if="{{item.state==1}}" class="weui-table_td weui-cell__ft_in-access weui-btn_wait">待审核</view>
+            <view wx:if="{{item.state==2}}" class="weui-table_td weui-cell__ft_in-access weui-btn_agree">已审核</view>
+            <view wx:if="{{item.state==3}}" class="weui-table_td weui-cell__ft_in-access weui-btn_refuse">已拒绝</view>
+            <view wx:if="{{item.state==4}}" class="weui-table_td weui-cell__ft_in-access weui-btn_over">已打款</view>
+        </navigator>
+    </view>
+    <!-- <button type="default" class="ajax-more" bindtap="getMore">加载更多</button> -->
+    <view wx:if="{{nodata}}" class="nodata">没有数据了</view>
+    <view wx:else class="nodata">向上滑动，加载更多</view>
+</view>

@@ -1,0 +1,104 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wx1b4484fae7429e04",
+	"projectname": "%E4%BC%9A%E5%91%98%E6%A1%A3%E6%A1%88",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 10,
+			"list": [
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/login/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "会员中心",
+					"pathName": "pages/user/center",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "素材",
+					"pathName": "pages/material/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "yyy",
+					"pathName": "pages/user/userplatform",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新增订单",
+					"pathName": "pages/order/addorder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "素材详情",
+					"pathName": "pages/material/detail",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "申请提现",
+					"pathName": "pages/user/tixian",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的提现",
+					"pathName": "pages/tixian/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/moneylog/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的平台",
+					"pathName": "pages/user/userplatform",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/order/editorder",
+					"query": "order_id=9"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,16 @@
+<import src="../../libs/gallery/gallery"/>
+<template is="gallery2" data="{{ ...$wux.gallery }}"/>
+
+<view class="page__bd">
+    <view class="formt">{{material.title}}</view>
+    <view class="mat-c">
+        <rich-text nodes="{{material.content}}"></rich-text>
+    </view>
+    <view wx:if="{{material.content}}" class="copy" bindtap="copy">一键复制文本</view>
+
+    <view wx:if="{{material.more.photos.length}}" class="formt">素材下载</view>
+    <view wx:for="{{material.more.photos}}" wx:key="" class="img-x">
+        <image class="mat-image" src="{{item.url}}" mode="widthFix" bindtap="showGallery" data-current="{{ index }}" />
+        <view class="downtext">{{item.name}}<text wx:id="{{material.state==1}}" data-id="{{material.id}}" data-url="{{item.url}}" class="iconfont icon-download" bindtap="download">点击下载</text></view>
+    </view>
+</view>

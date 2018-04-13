@@ -1,0 +1,85 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+<import src="../../libs/gallery/gallery"/>
+<template is="gallery" data="{{ ...$wux.gallery }}"/>
+
+
+<view class="page__bd">
+    <form bindsubmit="formSubmit">
+        <view class="formt">查看订单</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单平台：</view>
+                </view>
+                <view class="weui-cell__bd" >
+                    <input name="order_plate" id="order_plate" class="weui-input" placeholder="请输入订单平台" placeholder-class="gray" value="{{order_plate}}" bindinput="inputTyping" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">平台的ID：</view>
+                </view>
+                <view class="weui-cell__bd" >
+                    <input name="order_account" id="order_account" class="weui-input" placeholder="请输入订单帐号" placeholder-class="gray" value="{{order_account}}" bindinput="inputTyping" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单店铺：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="order_shop" id="order_shop" class="weui-input" placeholder="请输入订单店铺" placeholder-class="gray" value="{{order_shop}}" bindinput="inputTyping" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单编号：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="order_no" id="order_no" class="weui-input" placeholder="请输入订单编号" placeholder-class="gray" value="{{order_no}}" bindinput="inputTyping" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单金额：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="order_price" id="order_price" class="weui-input" type="digit"  placeholder="请输入订单金额" placeholder-class="gray" value="{{order_price}} 元" bindinput="inputTyping" disabled/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">订单日期：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{order_date}}" start="{{start_date}}" end="{{end_date}}" bindchange="bindDateChange" disabled>
+                        <text class="picker-text {{ order_date ? 'picker-color1' : '' }}">{{order_date ? order_date : '请选择订单日期'}}</text>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">上传截图：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view wx:if="{{more.length}}" class="weui-cell__hd weui-cell-avatar clearfix">
+                        <view wx:for="{{more}}" wx:key="" class="weui-avatar order-pic">
+                            <image class="widthFix" src="{{ item.pic }}" mode="widthFix" bindtap="showGallery" data-current="{{ index }}"></image>
+                        </view>
+                    </view>
+                    <view wx:else class="weui-cell__hd weui-cell-avatar">
+                        <view class="weui-avatar">
+                            <image class="widthFix thumbnail-100" src="../img/thumbnail.png" mode="widthFix" bindtap="chooseImage"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </form>
+    <button wx:if="{{order_state==1}}" class="weui-btn weui-btn_wait" form-type="default" disabled>待审核</button>
+    <button wx:if="{{order_state==3}}" class="weui-btn weui-btn_refuse" form-type="default" disabled>已拒绝</button>
+    <button wx:if="{{order_state==2}}" class="weui-btn weui-btn_agree" form-type="default" disabled>已同意</button>
+    <button wx:if="{{order_state==4}}" class="weui-btn weui-btn_over" form-type="default" disabled>已打款</button>
+</view>

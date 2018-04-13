@@ -1,0 +1,52 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+
+<view class="page__bd">
+    <form bindsubmit="formSubmit">
+        <view class="formt">申请提现详情</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">开户银行：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="bankname" id="bankname" class="weui-input" placeholder="" placeholder-class="gray" value="{{bankname}}" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">开户姓名：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="bankuname" id="bankuname" class="weui-input" placeholder="" placeholder-class="gray" value="{{bankuname}}" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">银行卡号：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="bankcard" id="bankcard" class="weui-input" type="digit" maxlength="19" placeholder="" placeholder-class="gray" value="{{bankcard}}" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">提现金额：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="money" id="money" class="weui-input" type="digit" placeholder="" placeholder-class="gray" value="{{tixian.money}} 元" disabled />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">申请时间：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="money" id="money" class="weui-input" type="digit" placeholder="" placeholder-class="gray" value="{{tixian.create_time}}" disabled />
+                </view>
+            </view>
+        </view>
+        <button class="weui-btn weui-btn_wait" form-type="default" disabled>{{tixian.state}}</button>
+    </form>
+</view>

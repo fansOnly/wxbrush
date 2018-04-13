@@ -1,0 +1,25 @@
+<view class="page__bd">
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="#ffffff" indicator-active-color="#1e82d2" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{banner}}" wx:key="">
+            <swiper-item>
+                <image class="widthFix" src="{{item.image}}" mode="widthFix" />
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class="title" style="margin-top: 0;">素材中心</view>
+    <view class="weui-piList clearfix">
+        <navigator wx:for="{{material}}" wx:key="" url="material/detail?id={{item.id}}" class="weui-piList_item">
+            <view class="weui-piList_itemx">
+                <view class="weui-piList_hd">
+                    <image class="weui-piList_pic scaleToFill" src="{{item.pic}}" mode="scaleToFill"></image>
+                </view>
+                <view class="weui-piList_bd">
+                    <text class="weui-piList_txt text-ellipsis">{{item.title}}</text>
+                    <!-- <text data-id="{{item.id}}" data-url="{{item.pic}}" class="iconfont icon-download text-right" bindtap="download"></text> -->
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <navigator url="material/index" open-type="switchTab" class="view-more" >查看更多</navigator>
+</view>

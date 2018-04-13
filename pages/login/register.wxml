@@ -1,0 +1,49 @@
+<import src="../../libs/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+
+
+<view class="page__bd">
+    <form bindsubmit="formSubmit">
+        <view class="formt">帐号注册</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <input name="uname" id="uname" class="weui-input weui-input-icon iconfont icon-user {{ isNameFocus ? 'blue' : '' }}" placeholder="请输入姓名" placeholder-class="gray" value="{{uname}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
+                    <view wx:if="{{uname.length > 0}}" class="weui-icon-clear" data-for="uname" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <input name="mobile" id="mobile" class="weui-input weui-input-icon iconfont icon-phone {{ isTelFocus ? 'blue' : '' }}" type="digit" maxlength="11" placeholder="请输入手机号" placeholder-class="gray" value="{{mobile}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
+                    <view wx:if="{{mobile.length > 0}}" class="weui-icon-clear" data-for="mobile" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <input name="upass" id="upass" class="weui-input weui-input-icon iconfont icon-pass {{ isPwdFocus ? 'blue' : '' }}" type="text" maxlength="16" password="{{ isPassword ? true : false }}" placeholder="请输入密码" placeholder-class="gray" value="{{upass}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
+                    <view class="iconfont icon-eye {{ !isPassword ? 'blue' : '' }}" data-for="isPassword" bindtap="showPass"></view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <input name="urepass" id="urepass" class="weui-input weui-input-icon iconfont icon-pass {{ isRePwdFocus ? 'blue' : '' }}" type="text" maxlength="16" password="{{ isPassword ? true : false }}" placeholder="请再次输入密码" placeholder-class="gray" value="{{urepass}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <input name="ucode" id="ucode" class="weui-input weui-input-icon iconfont icon-invitation {{ isCodeFocus ? 'blue' : '' }}" placeholder="请输入邀请人姓名" placeholder-class="gray" value="{{ucode}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
+                    <view wx:if="{{ucode.length > 0}}" class="weui-icon-clear" data-for="ucode" bindtap="clearInput">
+                        <icon type="clear" size="18" color="#8c8989" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">注 册</button>
+    </form>
+    <view class="weui-tip"><navigator url="login" class="weui-tip_a" style="margin-right: 15px;" open-type="reLaunch">已有账号，点此登录</navigator><navigator url="../index" class="weui-tip_a" open-type="switchTab">返回首页</navigator></view>
+</view>

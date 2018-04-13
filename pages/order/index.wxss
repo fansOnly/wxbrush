@@ -1,0 +1,9 @@
+.formt { padding: 30rpx; color: #1e82d2; font-size: 20px; text-align: center; }
+
+.weui-table_td { width: 25%; }
+.weui-cell__ft_in-access { padding-right: 0; }
+
+.weui-btn_wait { color: #000!important; }
+.weui-btn_refuse { color: #f00!important; }
+.weui-btn_agree { color: #1e82d2!important; }
+.weui-btn_over { color: #1aad19!important; }
