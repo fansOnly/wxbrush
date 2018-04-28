@@ -2,16 +2,20 @@
     <view class="formt">我的提现</view>
     <view class="weui-table">
         <view class="weui-table_th">
-            <view class="weui-table_td">序号</view>
-            <view class="weui-table_td">金额</view>
-            <view class="weui-table_td">时间</view>
+            <view class="weui-table_td table15">序号</view>
+            <view class="weui-table_td table30">金额</view>
+            <view class="weui-table_td table30">时间</view>
             <view class="weui-table_td">状态</view>
         </view>
         <navigator wx:for="{{tixianList}}" wx:key="" class="weui-table_tr {{ index%2==1 ? 'weui-table_trbg' : '' }}" url="detail?id={{item.id}}">
-            <view class="weui-table_td">{{index+1}}</view>
-            <view class="weui-table_td">{{item.money}} 元</view>
-            <view class="weui-table_td">{{item.create_time}}</view>
-            <view class="weui-table_td">{{item.state}}</view>
+            <view class="weui-table_td table15">{{index+1}}</view>
+            <view class="weui-table_td table30">{{item.money}} 元</view>
+            <view class="weui-table_td table30">{{item.create_time}}</view>
+            <view class="weui-table_td">
+                <text wx:if="{{item.state ==1}}" style="color:#f60;">待审核</text>
+                <text wx:if="{{item.state ==2}}" style="color:#f00;">已拒绝</text>
+                <text wx:if="{{item.state ==3}}" style="color:green;">已打款</text>
+            </view>
         </navigator>
     </view>
     <!-- <button type="default" class="ajax-more" bindtap="getMore">加载更多</button> -->

@@ -45,5 +45,5 @@
         </view>
         <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">注 册</button>
     </form>
-    <view class="weui-tip"><navigator url="login" class="weui-tip_a" style="margin-right: 15px;" open-type="reLaunch">已有账号，点此登录</navigator><navigator url="../index" class="weui-tip_a" open-type="switchTab">返回首页</navigator></view>
+    <view class="weui-tip"><navigator url="login" class="weui-tip_a" style="margin-right: 15px;" open-type="redirectTo">已有账号，点此登录</navigator><navigator url="../index" class="weui-tip_a" open-type="switchTab">返回首页</navigator></view>
 </view>

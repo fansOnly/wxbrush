@@ -10,6 +10,7 @@
         <view class="user-desc">
             <view class="user-txt">{{user.user_login}}</view>
             <view class="user-txt">电话：{{user.mobile}}</view>
+            <view class="user-txt">货款：{{user.money}}</view>
             <view class="user-txt">积分：{{user.commision}}</view>
             <view class="user-txt">本月订单：{{count}} 次</view>
         </view>
@@ -66,7 +67,13 @@
             </navigator>
         </view>
         <view class="weui-panel__ft">
-            <navigator url="../moneylog/index" class="weui-cell weui-cell_access weui-cell_link">
+            <navigator url="../moneylog/money" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd" style="color:#666;">我的货款</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
+            <navigator url="../moneylog/commision" class="weui-cell weui-cell_access weui-cell_link">
                 <view class="weui-cell__bd" style="color:#666;">我的积分</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>

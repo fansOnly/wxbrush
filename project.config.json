@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -93,10 +93,21 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 10,
 					"name": "订单详情",
-					"pathName": "pages/order/editorder",
+					"pathName": "pages/order/showorder",
 					"query": "order_id=9"
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "找回密码",
+					"pathName": "pages/login/findpwd"
 				}
 			]
 		}

@@ -29,7 +29,7 @@ Page({
             var time;
             tixianListx.forEach(ele=>{
                 time = new Date(ele.create_time*1000);
-                ele.create_time = App.Tools.formatTime(ele.create_time,'-');
+                ele.create_time = App.Tools.formatTime(time,'-');
             })
             if(page>1){
                 tixianList = tixianList.concat(tixianListx);

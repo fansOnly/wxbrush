@@ -6,6 +6,7 @@
 
         "pages/login/register",
         "pages/login/login",
+        "pages/login/findpwd",
 
         "pages/user/center",
         "pages/user/userinfo",
@@ -21,7 +22,8 @@
         "pages/member/index",
 
 
-        "pages/moneylog/index",
+        "pages/moneylog/money",
+        "pages/moneylog/commision",
 
         "pages/tixian/index",
         "pages/tixian/detail",

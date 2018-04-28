@@ -23,3 +23,12 @@
     </view>
     <navigator url="material/index" open-type="switchTab" class="view-more" >查看更多</navigator>
 </view>
+
+<!-- <button open-type="contact">进入客服会话</button>
+
+
+<view bindtap="wxLogin">微信登录</view>
+
+<form report-submit="true" bindsubmit="sendmsg">
+    <button form-type="submit">模板消息</button>
+</form> -->

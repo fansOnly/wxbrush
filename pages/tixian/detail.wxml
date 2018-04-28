@@ -47,6 +47,10 @@
                 </view>
             </view>
         </view>
-        <button class="weui-btn weui-btn_wait" form-type="default" disabled>{{tixian.state}}</button>
+        <button class="weui-btn weui-btn_wait" form-type="default" disabled>
+            <text wx:if="{{tixian.state ==1}}" style="color:#f60;">待审核</text>
+            <text wx:if="{{tixian.state ==2}}" style="color:#f00;">已拒绝</text>
+            <text wx:if="{{tixian.state ==3}}" style="color:green;">已打款</text>
+        </button>
     </form>
 </view>

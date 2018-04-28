@@ -8,9 +8,10 @@ Page({
         interval: 5000,
         duration: 1000,
         circular: true,
-
         material: [],
-        orderList: []
+        orderList: [],
+        access_token: '',
+        openid: '',
 	},
 	onLoad: function(e){
         this.getBanner();
@@ -100,4 +101,57 @@ Page({
             }
         })
     },
+    wxLogin: function(){
+        wx.login({
+            success: function(res){
+                console.log("wx.login", res);
+                var code = res.code;
+                if(code){
+                    return App.HttpService.wxLogin({code:code})
+                    .then(res=>{
+                        console.log("wxLogin", res);
+                        if(res.openid){
+                            var openid = res.openid;
+                            wx.setStorageSync("openid",res.openid);
+                            return App.HttpService.getAccessToken()
+                            .then(res=>{
+                                console.log("getAccessToken", res);
+                                if(res.access_token){
+                                    wx.setStorageSync("access_token",res.access_token);
+                                    // this.setData({access_token:res.access_token,openid:openid})
+                                }
+                            })
+                        }
+                    })
+                }
+            }
+        })
+    },
+    sendmsg: function(e){
+        var data = {
+            "keyword1": {
+                "value": "170112155582856",
+                "color": "#173177"
+            },
+            "keyword2": {
+                "value": "优嘉VIP万达店",
+                "color": "#173177"
+            },
+            "keyword3": {
+                "value": "2017-2-16 10:00:00",
+                "color": "#173177"
+            },
+            "keyword4": {
+                "value": "查看小程序",
+                "color": "#173177"
+            },
+        }
+        var openid = wx.getStorageSync("openid");
+        var access_token = wx.getStorageSync("access_token");
+        var datax = {access_token:access_token,touser:openid,template_id:'oX2rkk6U27wTO-wxGe2Xnzp6IuCkOmxL2T2lWpoYsGQ',form_id:e.detail.formId,data:data};
+        App.HttpService.sendMessage(datax)
+        .then(res=>{
+            console.log("sendMessage", res);
+        })
+    }
 })

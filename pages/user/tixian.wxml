@@ -32,15 +32,44 @@
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">提现金额：</view>
+                    <view class="weui-label">请选择提现类型：</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input name="money" id="money" class="weui-input" type="digit" placeholder="请输入提现金额" placeholder-class="gray" value="{{money}}" bindinput="inputTyping" />
-                    <view wx:if="{{money.length > 0}}" class="weui-icon-clear" data-for="money" bindtap="clearInput">
+                    <radio-group data-pid="{{index}}" class="radio-group" bindchange="radioChange">
+                        <label class="radio" wx:for="{{tixianTypes}}" wx:key="">
+                          <radio value="{{item.id}}" checked="{{item.id == tixianTypeId ? 'checked' : ''}}"/>{{item.name}}
+                        </label>
+                    </radio-group>
+                </view>
+            </view>
+            <block wx:if="{{tixianTypeId == 1}}">
+                <view class="weui-cell weui-cell_input spx">当前可用货款：{{totalMoney}}</view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">货款提现：</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="money" id="money" class="weui-input" type="digit" placeholder="请输入货款金额" placeholder-class="gray" value="{{money}}" bindinput="inputTyping" />
+                        <view wx:if="{{money.length > 0}}" class="weui-icon-clear" data-for="money" bindtap="clearInput">
+                            <icon type="clear" size="18" color="#8c8989" />
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:if="{{tixianTypeId == 2}}">
+            <view class="weui-cell weui-cell_input spx">当前可用积分：{{totalCommision}}</view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">积分提现：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="commision" id="commision" class="weui-input" type="digit" placeholder="请输入积分" placeholder-class="gray" value="{{commision}}" bindinput="inputTyping" />
+                    <view wx:if="{{commision.length > 0}}" class="weui-icon-clear" data-for="commision" bindtap="clearInput">
                         <icon type="clear" size="18" color="#8c8989" />
                     </view>
                 </view>
             </view>
+        </block>
         </view>
         <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">提 交</button>
     </form>

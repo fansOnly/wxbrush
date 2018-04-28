@@ -23,12 +23,12 @@
             </view>
             <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">
-                    <input name="upass" id="upass" class="weui-input weui-input-icon iconfont icon-pass {{ isPwdFocus ? 'blue' : '' }} last-child" type="text" maxlength="16" password="{{ isPassword ? true : false }}" placeholder="密码" placeholder-class="gray" value="{{upass}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
+                    <input name="upass" id="upass" class="weui-input weui-input-icon iconfont icon-pass {{ isPwdFocus ? 'blue' : '' }} last-child" type="text" maxlength="16" password="{{ isPassword ? true : false }}" placeholder="请输入新密码" placeholder-class="gray" value="{{upass}}" bindinput="inputTyping" bindfocus="inputFocus" bindblur="inuputBlur" />
                     <view class="iconfont icon-eye {{ !isPassword ? 'blue' : '' }}" data-for="isPassword" bindtap="showPass"></view>
                 </view>
             </view>
         </view>
-        <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">登 录</button>
+        <button class="weui-btn" form-type="submit" hover-class="button-hover-blue">提 交</button>
     </form>
-    <view class="weui-tip"><navigator url="register" class="weui-tip_a" style="margin-right: 15px;" open-type="redirectTo">注册帐号</navigator><navigator url="findpwd" class="weui-tip_a" style="margin-right: 15px;" open-type="redirectTo">忘记密码</navigator><navigator url="../index" class="weui-tip_a" open-type="switchTab">返回首页</navigator></view>
+    <view class="weui-tip"><navigator url="register" class="weui-tip_a" style="margin-right: 15px;" open-type="redirectTo">注册帐号</navigator><navigator url="login" class="weui-tip_a" style="margin-right: 15px;" open-type="redirectTo">登录帐号</navigator><navigator url="../index" class="weui-tip_a" open-type="switchTab">返回首页</navigator></view>
 </view>

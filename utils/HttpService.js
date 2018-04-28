@@ -7,8 +7,13 @@ class Service extends ServiceBase {
 		this.$$path = {
 			uploadImage : 'api/Common/uploadImage',
 
+			wxLogin : 'api/Common/wxLogin',
+			getAccessToken : 'api/Common/getAccessToken',
+			sendMessage : 'api/Common/sendMessage',
+
 			Regist : 'api/Login/regist',
 			Login : 'api/Login/login',
+			Findpwd : 'api/Login/findpwd',
 
 			GetUser : 'api/User/center',
 			SetUser : 'api/User/userinfo',
@@ -45,6 +50,18 @@ class Service extends ServiceBase {
 	uploadImage(params) {
 		return this.postRequest(this.$$path.uploadImage, params)
 	}
+	// 微信登录
+	wxLogin(params) {
+		return this.postRequest(this.$$path.wxLogin, params)
+	}
+	// 获取token
+	getAccessToken(params) {
+		return this.postRequest(this.$$path.getAccessToken, params)
+	}
+	// 发送模板消息
+	sendMessage(params) {
+		return this.postRequest(this.$$path.sendMessage, params)
+	}
 
 
 	//**************************************************************
@@ -55,6 +72,10 @@ class Service extends ServiceBase {
 	// 会员登录
 	Login(params) {
 		return this.postRequest(this.$$path.Login, params)
+	}
+	// 找回密码
+	Findpwd(params) {
+		return this.postRequest(this.$$path.Findpwd, params)
 	}
 
 

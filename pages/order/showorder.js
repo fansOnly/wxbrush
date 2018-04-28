@@ -16,6 +16,7 @@ Page({
         start_date: '',
         end_date: '',
         order_state: 1,
+        platforms: [],
 	},
 	onLoad: function(e){
         this.$wuxToast = App.wux(this).$wuxToast;
@@ -34,8 +35,15 @@ Page({
             order_date:now.split(' ')[0],
             order_time:now.split(' ')[1]
         })
-
+        this.getPlatformList();
         this.getUserOrderDetail();
+    },
+    getPlatformList: function(){
+        App.HttpService.getPlatformList({})
+        .then(res=>{
+            console.log("getPlatformList", res);
+            this.setData({platforms:res.data.platformList})
+        })
     },
     getUserOrderDetail: function(e){
         var id = this.data.order_id;
@@ -52,8 +60,17 @@ Page({
                 })
                 return !1;
             }else{
+                var platforms = this.data.platforms;
+                var order_plateid = res.data.order.order_plateid;
+                var order_plate = '';
+                platforms.forEach(ele=>{
+                    if(order_plateid==ele.id){
+                        order_plate = ele.name;
+                    }
+                })
                 this.setData({
-                    order_plate: res.data.order.order_plate,
+                    order_plate: order_plate,
+                    order_plateid: order_plateid,
                     order_no: res.data.order.order_no,
                     order_account: res.data.order.order_account,
                     order_price: res.data.order.order_price,
