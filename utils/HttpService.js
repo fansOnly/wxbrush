@@ -29,6 +29,7 @@ class Service extends ServiceBase {
 			GetTixianDetail : 'api/User/tixianDetail',
 			GetTixianDesc : 'api/User/tixianDesc',
 			GetUserMoneyLog : 'api/User/moneyLog',
+			GetUserMoneyxLog : 'api/User/moneyxLog',
 
 			getUserOrderList : 'api/Order/index',
 			addUserOrder : 'api/Order/addOrder',
@@ -137,6 +138,10 @@ class Service extends ServiceBase {
 	// 获取积分变动记录
 	GetUserMoneyLog(params) {
 		return this.getRequest(this.$$path.GetUserMoneyLog, params)
+	}
+	// 获取货款变动记录
+	GetUserMoneyxLog(params) {
+		return this.getRequest(this.$$path.GetUserMoneyxLog, params)
 	}
 
 

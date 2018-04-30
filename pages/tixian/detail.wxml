@@ -30,12 +30,20 @@
                     <input name="bankcard" id="bankcard" class="weui-input" type="digit" maxlength="19" placeholder="" placeholder-class="gray" value="{{bankcard}}" disabled />
                 </view>
             </view>
+             <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">提现方式：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="money" id="money" class="weui-input" type="digit" placeholder="" placeholder-class="gray" value="{{tixian.type == 1 ? '货款' : '积分'}}" disabled />
+                </view>
+            </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
                     <view class="weui-label">提现金额：</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input name="money" id="money" class="weui-input" type="digit" placeholder="" placeholder-class="gray" value="{{tixian.money}} 元" disabled />
+                    <input name="money" id="money" class="weui-input" type="digit" placeholder="" placeholder-class="gray" value="{{tixian.type == 1 ? tixian.money : tixian.commision}} 元" disabled />
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">

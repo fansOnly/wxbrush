@@ -3,13 +3,15 @@
     <view class="weui-table">
         <view class="weui-table_th">
             <view class="weui-table_td table15">序号</view>
-            <view class="weui-table_td table30">金额</view>
+            <view class="weui-table_td table15">方式</view>
+            <view class="weui-table_td table25">金额</view>
             <view class="weui-table_td table30">时间</view>
             <view class="weui-table_td">状态</view>
         </view>
         <navigator wx:for="{{tixianList}}" wx:key="" class="weui-table_tr {{ index%2==1 ? 'weui-table_trbg' : '' }}" url="detail?id={{item.id}}">
             <view class="weui-table_td table15">{{index+1}}</view>
-            <view class="weui-table_td table30">{{item.money}} 元</view>
+            <view class="weui-table_td table15">{{ item.type == 1 ? '货款' : '积分'}}</view>
+            <view class="weui-table_td table25">{{ item.type == 1 ? item.money : item.commision}} 元</view>
             <view class="weui-table_td table30">{{item.create_time}}</view>
             <view class="weui-table_td">
                 <text wx:if="{{item.state ==1}}" style="color:#f60;">待审核</text>

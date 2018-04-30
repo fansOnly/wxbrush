@@ -67,20 +67,20 @@
             </navigator>
         </view>
         <view class="weui-panel__ft">
+            <navigator url="../tixian/index" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd" style="color:#666;">我的提现</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        <view class="weui-panel__ft">
             <navigator url="../moneylog/money" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd" style="color:#666;">我的货款</view>
+                <view class="weui-cell__bd" style="color:#666;">货款日志</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
         </view>
         <view class="weui-panel__ft">
             <navigator url="../moneylog/commision" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd" style="color:#666;">我的积分</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-            </navigator>
-        </view>
-        <view class="weui-panel__ft">
-            <navigator url="../tixian/index" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd" style="color:#666;">我的提现</view>
+                <view class="weui-cell__bd" style="color:#666;">积分日志</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
         </view>
